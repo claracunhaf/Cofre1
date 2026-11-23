@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff8ef">
+    <title>Cofre Secreto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script js/script.js" defer></script>
+</head>
+<body>
+
+    <div class="decoracao decoracao-superior"></div>
+    <div class="decoracao decoracao-inferior"></div>
+
+    <main class="container" id="painel-cofre">
+
+        <header class="cabecalho">
+            <span class="etiqueta">descubra a senha em 7 tentativas</span>
+            <h1>Cofre</h1>
+            <p class="subtitulo">tente adivinhar a senha!</p>
+
+            <div class="linha-decorativa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <section class="conteudo-jogo">
+
+            <div class="instrucoes">
+                <span class="numero-secao">01</span>
+                <p>Descubra a senha secreta entre <strong>1 e 50</strong>.</p>
+            </div>
+
+            <div class="imagem-container">
+                <div class="circulo-fundo"></div>
+                <img id="img-cofre" src="imagens/cofre-fechado.png" alt="Cofre fechado">
+            </div>
+
+            <div class="painel-tentativas">
+                <div class="tentativas-info">
+                    <span class="legenda">TENTATIVAS RESTANTES</span>
+                    <span class="contador">
+                        <span id="tentativas-restantes">7</span>
+                        <span class="contador-total">/ 7</span>
+                    </span>
+                </div>
+
+                <div class="progresso-tentativas" id="progresso-tentativas">
+                    <span class="ponto ativo"></span>
+                    <span class="ponto ativo"></span>
+                    <span class="ponto ativo"></span>
+                    <span class="ponto ativo"></span>
+                    <span class="ponto ativo"></span>
+                    <span class="ponto ativo"></span>
+                    <span class="ponto ativo"></span>
+                </div>
+            </div>
+
+            <p id="alerta-poucas-tentativas" class="alerta-oculto" aria-live="polite">
+                Restam poucas tentativas. Escolha com cuidado.
+            </p>
+
+            <div class="controles">
+                <label for="input-senha">QUAL É A SENHA?</label>
+
+                <input
+                    type="number"
+                    id="input-senha"
+                    min="1"
+                    max="50"
+                    step="1"
+                    placeholder="Digite um número"
+                    autocomplete="off"
+                >
+
+                <button id="btn-tentar" type="button">
+                    Desbloquear cofre
+                </button>
+            </div>
+
+            <div class="feedback-container" aria-live="polite">
+                <span class="feedback-linha"></span>
+                <p id="mensagem-feedback" class="mensagem">
+                    Aguardando seu primeiro palpite.
+                </p>
+                <span class="feedback-linha"></span>
+            </div>
+
+        </section>
+
+        <footer class="rodape">
+            <button id="btn-reiniciar" class="btn-secundario" type="button">
+                Começar novamente
+            </button>
+        </footer>
+
+    </main>
+
+    <div id="overlay-vitoria" class="overlay oculto">
+        <div class="modal-vitoria">
+            <div class="detalhe-modal"></div>
+
+            <span class="etiqueta">MISSÃO CONCLUÍDA</span>
+
+            <div class="simbolo-sucesso">
+                <span></span>
+            </div>
+
+            <h2>Cofre desbloqueado!</h2>
+
+            <p id="texto-tentativas-usadas"></p>
+
+            <button id="btn-jogar-novamente" class="btn-primario" type="button">
+                Jogar novamente
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
